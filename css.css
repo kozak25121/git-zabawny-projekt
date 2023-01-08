@@ -1,0 +1,357 @@
+	
+	body{
+		margin:0px;
+		padding:0px;
+		background-color:black;
+	}
+
+	#imagines{
+		margin:20px;
+		display:flex;
+		flex-wrap:wrap;
+		flex-direction: in-line;
+		justify-content:center;
+		gap:30px;
+	}
+	#imagines>*{
+		flex-shrink: 1;
+		height:30vh;
+		min-width:120px;
+		flex-basis:content;
+		flex-direction: column;
+		align-self: center;
+	}
+	#imagines>div>img,#imagines>div>.ustaw>video {
+		margin:0px;
+		padding:0px;
+		min-width:116px;
+		height: 100%;
+		cursor:pointer;
+		max-width: 100%;
+	}
+	img {
+		object-fit: fill;
+	}
+	#imagines>div>.ustaw{
+		height:100%;
+		width:30vw;
+	}
+	@media only screen and (max-width: 1600px) {
+		#imagines>*{
+			height: calc(50vw - 10px);
+			max-width: calc(50vw - 10px);
+			border: 2px solid red ;
+		}
+		img {
+			object-fit: cover;
+		}
+		#imagines{
+			margin:0px;
+			gap:5px;
+		}
+	}
+
+	
+	.ods{
+		margin:1px;
+	}
+	nav{
+		margin-left:auto;
+		margin-right:auto;
+	}
+	input{
+	background-color:#fe7f00;
+	display:box;
+	border:0px;
+	border-radius:10px;
+	box-shadow:0px 2px 2px 2px;
+	}
+	.file{
+	width:250px !important;
+	}
+	input:hover{
+	background-color:#ff8f22;
+	border:0px;
+	border-radius:10px;
+	box-shadow:0 0 0 0;
+	 transition-duration:1s;
+	}
+	.container{
+		margin-top:30px;
+	}
+	.page-item{
+		background-color:black !important;
+	}
+	iframe{
+		width:100%;
+		height:100%;
+	}
+	#scroll{
+		width:40px;
+		height:40px;
+		position:fixed;
+		bottom:10px;
+		right:10px;
+		transition-duration:1s;
+	}
+	
+	::-webkit-scrollbar{
+		width:0px;
+	}
+	*{
+		scrollbar-width: none;
+	}
+	#progressbar{
+		content:'';
+		position:fixed;
+		top: 0;
+		right: 0;
+		width: 10px;
+		height: 100%;
+		background: linear-gradient(to top, #008aff, #00ffe7);
+		filter: blur(10px);
+		animation: animate 5s linear infinite;
+	}
+	
+	@keyframes animate{
+		0%,100%{
+			filter: hue-rotate(0deg);
+		}
+		50%{
+			filter: hue-rotate(360deg);
+		}
+	}
+	#progressbar:before{
+		content:'';
+		position:absolute;
+		top: 0;
+		right: 0;
+		width: 10%;
+		height: 100%;
+		background: linear-gradient(to top, #008aff, #00ffe7);
+		filter: blur(10px);
+		-webkit-filter: blur(10px);
+	}
+	
+	#progressbar:after{
+		content:'';
+		position:absolute;
+		top:0;
+		right:0;
+		width: 10%;
+		height: 100%;
+		background: linear-gradient(to top, #008aff, #00ffe7);
+		filter: blur(30px);
+		-webkit-filter: blur(30px);
+	}
+	
+	#scrollPath{
+		position: fixed;
+		top: 0;
+		right: 0;
+		width:10px;
+		height: 10%;
+		background: rgba(255,255,255,0.05);
+	}
+	
+	.myVideo{
+		width:100%;
+		height:150px;
+		margin-left:auto;
+		margin-right:auto;
+		display:block;
+	}
+
+	#scrooltop{
+		background-color:gray;
+		position: fixed;
+		font-size: 30px;
+		padding:0px 12px 0px 12px;
+		bottom: 10px;
+		right:20px;
+		z-index: 999; 
+		border-radius:100%;
+	}
+
+	#inputs {
+		background-color:gray;
+		position: fixed;
+		font-size: 30px;
+		padding:0px 12px 0px 12px;
+		bottom: 10px;
+		left:20px;
+		z-index: 999; 
+		border-radius:100%;
+	}
+
+	#navbar,#navbar>div{
+		position: relative;
+		top:0px;
+		left:0px;
+		background-color:silver;
+		width: 100%;
+		height:80px;
+		margin:0px;
+		z-index: 3;
+		
+	}
+	#rozwini{
+		float:right;
+		margin:20px;
+		width:40px;
+		height:35px;
+		cursor: pointer;
+		background: transparent;
+		border:0;
+		border-top: 5px solid #fff;
+		position: relative;
+		transition: 0.5s;
+	}
+	
+	#rozwini::before, #rozwini::after {
+		content: '';
+		position: absolute;
+		top:0px;
+		left:0px;
+		width:100%;
+		border-top: 5px solid #fff;
+		transform: translateY(10px);
+		transition: 0.5s;
+	}
+	
+	#rozwini::after {
+		transform: translateY(25px);
+		
+	}
+	
+	#rozwini:focus{
+		transform: rotate(45deg);
+		transition: 0.5s;
+		border: none;
+	}
+	#rozwini:focus::after{
+		transform: rotate(90deg) translateX(10px);
+		transition: 0.5s;
+	}
+	
+	 #sprawdzi>#rozwini:focus~#ukryte ,#ukryte:hover{
+			top:30px;
+			transition: 1s;
+		}
+		
+	#ukryte{
+			position:relative;
+			top:-1000%;
+			left:0px;
+			background-color:silver;
+			z-index: -1;
+			margin:0;
+			padding:30px;
+			transition: 1s;
+			border-radius:30px;
+			transition-delay: 0.5s;
+		}
+	#ukryte>*{
+			margin: 5px 0px 5px 20px;
+		}
+	
+	.ile-foto{
+		max-width:50%;
+		text-align: center;
+		margin-top: 10px;
+		margin-left:20px;
+		font-size:50px;
+		text-decoration:none;
+		font-weight:700;
+		display:inline-block;
+	}
+	
+	
+	#hoverfotobox {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100vw;
+		height: 100vh;
+		margin: 0px auto 8vh auto;
+	}
+	
+	#offfoto {
+		z-index: 10;
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		display: none;
+		background-color: rgba(128,128,128, 0.8);
+	}
+	#hoverfoto,#displayvideo {
+		z-index: 20;
+		width: 100%;
+  		height: 100%;
+		object-fit: contain;
+	}
+	#left{
+		position: fixed;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100vw;
+		height: 100vh;
+		top:0px;
+		left:0px;
+	}
+	#left>*{
+		display:block;
+		width:50px;
+		height:50px;
+	}
+	#bottommenu{
+		position: fixed;
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		margin: 0px auto;
+		width: 85vw;
+		height: 100vh;
+		top:0px;
+		z-index: 999;
+		left:7.5vw;
+	}
+	#bottommenu>*{
+		display:block;
+		width:70px;
+		height:50px;
+	}
+
+	#przykryj{
+		position: fixed;
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		margin: 0px;
+		z-index: 99;
+		width: 100vw;
+		height: 100vh;
+		top:0px;
+		left:0px;
+	}
+
+	.un {
+		opacity: 0;
+	}
+
+	.show {
+		opacity: 1;
+	}
+
+	.inputas{
+		display:flex; 
+		justify-content:space-between;
+	}
+
+	.inputas-N{
+		display: none;
+	}
